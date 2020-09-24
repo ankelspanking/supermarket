@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="695.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <AnchorPane minHeight="40.0" onMouseDragged="#onDrag" onMousePressed="#onPress" prefHeight="40.0" prefWidth="1309.0" style="-fx-padding: 0; -fx-background-color: rgb(0,0,0,0.8);" stylesheets="@../Styles/topBarButtonStyle.css">
+            <children>
+                <ImageView fx:id="icon" fitHeight="30.0" fitWidth="37.0" layoutX="18.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/icon.png" />
+                    </image>
+                </ImageView>
+                <Text fx:id="title" fill="WHITE" layoutX="63.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" wrappingWidth="277.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Text>
+                <JFXButton layoutX="1239.0" layoutY="8.0" mnemonicParsing="false" onAction="#onMini" prefHeight="25.0" prefWidth="28.0" style="-fx-graphic:url(images/mini.png);" />
+                <JFXButton layoutX="1277.0" layoutY="8.0" mnemonicParsing="false" onAction="#onClose" style="-fx-graphic:url(images/close2.png);" />
+            </children>
+        </AnchorPane>
+        <AnchorPane id="mainPane" fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1315.0" stylesheets="@../Styles/style.css">
+            <children>
+                <HBox alignment="CENTER" layoutX="30.0" layoutY="522.0" prefHeight="40.0" prefWidth="523.0" spacing="30.0">
+                    <JFXButton fx:id="add" mnemonicParsing="false" onAction="#add" prefWidth="100" text="Add">
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                    </JFXButton>
+                    <JFXButton fx:id="edit" mnemonicParsing="false" onAction="#edit" prefWidth="100" text="Edit">
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                    </JFXButton>
+                    <JFXButton id="delete" fx:id="delete" mnemonicParsing="false" onAction="#onDelete" prefWidth="100" text="Delete" />
+                    <JFXButton fx:id="history" mnemonicParsing="false" onAction="#onHistory" prefHeight="25.0" prefWidth="99.0" text="History" />
+                </HBox>
+                <BorderPane fx:id="orderLayout" layoutX="583.0" layoutY="18.0" prefHeight="544.0" prefWidth="523.0" style="-fx-background-color: green;">
+                    <bottom>
+                        <FlowPane fx:id="dataPane" hgap="30" prefHeight="81.0" prefWidth="523.0" style="-fx-background-color: #416473;" styleClass="textClass" BorderPane.alignment="CENTER" />
+                    </bottom>
+                    <top>
+                        <VBox prefHeight="100.0" prefWidth="523.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Pane fx:id="companyNamePanel" prefHeight="107.0" prefWidth="523.0" style="-fx-background-color: #416473;">
+                                    <children>
+                                        <Text fx:id="companyName1" fill="#141414" layoutX="140.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name of the company" textAlignment="CENTER" wrappingWidth="243.53515625">
+                                            <font>
+                                                <Font size="32.0" />
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </VBox>
+                    </top>
+                    <center>
+                        <TableView fx:id="table" editable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <columns>
+                                <TableColumn fx:id="nameCell" prefWidth="209.0" text="Product Name" />
+                                <TableColumn fx:id="amountCell" minWidth="0.0" prefWidth="103.0" text="Amount" />
+                                <TableColumn fx:id="priceCell" prefWidth="79.0" text="Price" />
+                                <TableColumn fx:id="totalCell" prefWidth="131.0" text="Total" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+                <TextField fx:id="search" layoutX="30.0" layoutY="17.0" prefHeight="25.0" prefWidth="530.0" promptText="Search ...">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <ScrollPane fx:id="scrollPane" layoutX="30.0" layoutY="47.0" prefHeight="463.0" prefWidth="530.0">
+                    <content>
+                        <VBox fx:id="layout" minHeight="449.0" minWidth="515"  prefWidth="515.0" spacing="14" style="-fx-padding:10px 0px" stylesheets="@../Styles/buttonStyle.css" />
+                    </content>
+                </ScrollPane>
+                <JFXButton fx:id="buy" layoutX="1007.0" layoutY="575.0" mnemonicParsing="false" onAction="#onBuy" prefHeight="30.0" prefWidth="87.0" text="Buy">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </JFXButton>
+                <FlowPane fx:id="toggleSwitchPane" layoutX="1117.0" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: gray;" />
+                <AnchorPane layoutX="1117.0" layoutY="63.0" prefHeight="613.0" prefWidth="201.0" style="-fx-background-color:  linear-gradient(to left top,#0f2027, #203a43, #2c5364);">
+                    <children>
+                        <Text fx:id="companyName" layoutX="1.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill:white" text="Company Name" textAlignment="CENTER" wrappingWidth="200.0">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Text>
+                        <FlowPane alignment="CENTER" layoutX="1.0" layoutY="335.0" prefHeight="149.0" prefWidth="200.0">
+                     <children>
+                                  <ImageView fx:id="logo" fitHeight="103.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@../images/icon.png" />
+                                      </image>
+                                  </ImageView>
+                     </children>
+                        </FlowPane>
+                    </children>
+                </AnchorPane>
+                <JFXButton contentDisplay="RIGHT" graphicTextGap="15.0" layoutX="821.0" layoutY="574.0" mnemonicParsing="false" onAction="#onClearOrder" prefHeight="39.0" prefWidth="165.0" style="-fx-graphic: url(images/clear.png)" text="Clear Order" />
+            <JFXButton layoutX="366.0" layoutY="619.0" mnemonicParsing="false" onAction="#showCustomerOrderPanel" prefHeight="38.0" prefWidth="374.0" style="-fx-background-color: #909090;" text="Search For A Customers" />
+
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

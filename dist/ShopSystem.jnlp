@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ShopSystem.jnlp">
+  <information>
+    <title>ShopSystem</title>
+    <vendor>tazos</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Xmx2048m "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ShopSystem.jar" size="104092" download="eager" />
+    <jar href="lib\jfoenix-8.0.8.jar" size="2708772" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="sample.Main"  name="ShopSystem" />
+  <update check="always"/>
+</jnlp>

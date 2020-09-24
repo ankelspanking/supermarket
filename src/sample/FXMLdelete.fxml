@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+    <?import javafx.scene.layout.VBox?>
+
+    <VBox fx:id="productPane" minHeight="449.0" minWidth="515"  prefWidth="515.0" spacing="14" style="-fx-padding:10px 0px" stylesheets="@../Styles/buttonStyle.css" maxHeight="-Infinity"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DeleteController">
+
+    </VBox>

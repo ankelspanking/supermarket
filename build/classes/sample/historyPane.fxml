@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.stage.Stage?>
+<?import javafx.scene.control.Button?>
+<Stage fx:id="stage" title="History" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HistoryController">
+    <icons>
+        <Image url="@../images/history.png" />
+    </icons>
+    <scene>                               
+        <Scene>
+              <BorderPane prefHeight="782.0" prefWidth="1136.0">                  
+                  <center>
+               <VBox stylesheets="@../Styles/style.css" BorderPane.alignment="CENTER">
+                  <children>
+                            <ScrollPane hbarPolicy="NEVER" prefHeight="745.0" prefWidth="836.0">
+                                <content>
+                                    <FlowPane fx:id="historyLayout" hgap="50" prefHeight="713.0" prefWidth="840.0"  vgap="20" />
+                                </content>
+                            </ScrollPane>
+                     <ScrollPane prefHeight="95.0" prefWidth="836.0">
+                        <content>
+                           <HBox fx:id="buttonsPanel" alignment="CENTER" minWidth="832.0" prefHeight="55.0" spacing="20.0">
+                              <padding>
+                                 <Insets left="10.0" right="10.0" />
+                              </padding>
+                              <children>
+                                 <Button fx:id ="leftButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#onClickLeft" prefHeight="42.0" prefWidth="118.0" style="-fx-background-radius: 30px;" text="Previous">
+                                    <graphic>
+                                       <ImageView fitHeight="58.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@../images/leftArrow.png" />
+                                          </image>
+                                       </ImageView>
+                                    </graphic>
+                                 </Button>
+                                 <Button fx:id ="rightButton" contentDisplay="RIGHT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#onClickRight" prefHeight="42.0" prefWidth="118.0" style="-fx-background-radius: 30px;" text="Next">
+                                    <graphic>
+                                       <ImageView fitHeight="58.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@../images/rightArrow.png" />
+                                          </image>
+                                       </ImageView>
+                                    </graphic>
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                 </Button>
+                              </children></HBox>
+                        </content>
+                     </ScrollPane>
+                  </children>
+               </VBox>
+                  </center>
+                  <left>
+                      <TreeTableView fx:id="historyTree" prefHeight="802.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                          <columns>
+                              <TreeTableColumn fx:id="ordersColumn" prefWidth="300.0" text="Orders" />
+                          </columns>
+                      </TreeTableView>
+                  </left>
+              </BorderPane>
+        </Scene>
+    </scene>
+</Stage>
